@@ -14,21 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonInfo: SpringButton!
     
     var animation = Animation.getAnimations()
-    let reserve = Animation.getValues()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateButtonName(value: animation.first ?? reserve)
+        updateButtonName(value: animation)
     }
     
     @IBAction func SpringButtonPressed(_ sender: SpringButton) {
-        startAnimation(value: animation.first ?? reserve)
-        updatingLabel(value: animation.first ?? reserve)
+        startAnimation(value: animation)
+        updatingLabel(value: animation)
         
         animationSpringView.animate()
         
         animation = Animation.getAnimations()
-        updateButtonName(value: animation.first ?? reserve)
+        updateButtonName(value: animation)
     }
     
     private func startAnimation(value: Animation) {
